@@ -1,0 +1,49 @@
+How to call functions
+
+arg = "yee"
+arg2 = "ye2"
+
+def HELPME(arg):
+     print (arg)
+HELPME(arg2)  # this returns "ye2"
+
+START0: Backup of bookbot test code.
+
+garbo = {"k": 8, "&": 2, "g": 9} # TEMP replacement for character_dictionary()
+ 
+def dictionary_sort():
+     ds_dict = garbo #character_dictionary()
+     dict_sortie = []
+     
+     for char in ds_dict:
+          if char.isalpha():
+               ds_single= {char: ds_dict[char]} #single dictionary for use in helper
+               dict_sortie.append({char: ds_dict[char]}) #creating list of dictionaries
+           
+     def dictionary_sort_helper(ds_single): # must return count value for purpose of sorting
+          keyh = list(ds_single.keys())[0]
+          
+          return ds_single[keyh]
+     dict_sortie.sort(reverse=True, key= dictionary_sort_helper)
+     return dict_sortie
+
+dsv = dictionary_sort()
+def dictionary_sort_output():  #prints the sorted list from dictionary_sort
+     for i in range(0, len(dsv)): #possible to incorporate this function into- 
+          print (dsv[i])          #-dictionary sort, perhaps?  
+    
+#dictionary_sort_helper()
+
+END0
+
+START1: Code I might need to properly print from bookbot
+
+#dsv = dictionary_sort()
+"""def dictionary_sort_output():  #prints the sorted list from dictionary_sort
+     for i in range(0, len(dsv)): 
+          for key in dsv[i]: 
+               print (key) 
+    
+#dictionary_sort_helper()"""
+
+END1
