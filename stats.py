@@ -1,3 +1,5 @@
+import sys
+
 #WAI: Working as Intended
 #IMP: Implemented, not final
 #NFP: Null For Purpose, remains for study
@@ -8,7 +10,7 @@ def get_book_text(path_to_file):
         return file_contents       #returns contents of file targeted by path_to_file
 
 def word_count():
-     text = get_book_text("books/frankenstein.txt")
+     text = get_book_text(sys.argv[1]) # removed hardcoded path for lesson
      words = text.split()
      count = 0
      for i in range(0, len(words)):
@@ -17,7 +19,7 @@ def word_count():
 
 def character_dictionary():
      char_dict = {}
-     text = get_book_text("books/frankenstein.txt")
+     text = get_book_text(sys.argv[1]) # removed hardcoded path for lesson
      cd_text = str.lower(text)
      
      #characters = []   A: Not needed, use cd_text[i] for character strings
@@ -33,8 +35,6 @@ def character_dictionary():
                     char_dict[cd_text[i]] += 1 #A: This operation does not work on a list
      return char_dict
 
-c_d_output = character_dictionary()
- 
 def dictionary_sort():
      ds_dict = character_dictionary()
      dict_sortie = []
